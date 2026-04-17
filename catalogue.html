@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalogue Fournisseur — TALIA Concept | Aménagement Intérieur Sur Mesure</title>
+  <meta name="description" content="Découvrez le catalogue fournisseur de TALIA Concept : une sélection rigoureuse de partenaires reconnus pour l'aménagement sur mesure, cuisine, salle de bain, ameublement, literie, verrière. Breuil-le-Vert (Oise)." />
+  <link rel="canonical" href="https://www.talia-concept.fr/catalogue.html" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://www.talia-concept.fr/catalogue.html" />
+  <meta property="og:title" content="Catalogue Fournisseur — TALIA Concept" />
+  <meta property="og:description" content="Une sélection rigoureuse de partenaires reconnus pour l'aménagement sur mesure. Cuisine, salle de bain, literie, verrière, ameublement — découvrez nos fournisseurs." />
+  <meta property="og:image" content="https://www.talia-concept.fr/assets/images/hero/facade.webp" />
+  <meta property="og:site_name" content="TALIA Concept" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Catalogue Fournisseur — TALIA Concept" />
+  <meta name="twitter:description" content="Sélection rigoureuse de partenaires pour votre aménagement sur mesure. Breuil-le-Vert (Oise)." />
+  <meta name="twitter:image" content="https://www.talia-concept.fr/assets/images/hero/facade.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rajdhani:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; font-weight: 300; background: #F8FBFF; color: #0A1628; overflow-x: hidden; cursor: none; }
+
+    /* ===== CURSOR (desktop only) ===== */
+    .cursor { position: fixed; width: 10px; height: 10px; background: #00C8C8; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .3s, height .3s; }
+    .cursor-ring { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(0,200,200,.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .3s, height .3s, opacity .3s; }
+    .cursor.h { width: 16px; height: 16px; }
+    .cursor-ring.h { width: 56px; height: 56px; opacity: .3; }
+    @media (hover: none), (pointer: coarse) {
+      body { cursor: auto; }
+      .cursor, .cursor-ring { display: none !important; }
+    }
+
+    /* ===== VARIABLES ===== */
+    :root {
+      --cyan: #00C8C8; --cyan-bright: #00E5E5; --cyan-dark: #008A8A;
+      --navy: #0A1628; --navy-mid: #1A2E4A; --navy-light: #2A4570;
+      --white: #FFFFFF; --ice: #F0F7FF; --ice-mid: #D8EAFF;
+      --text-mid: #2A4570; --text-light: #6B8BB0;
+    }
+
+    /* ===== FOCUS ===== */
+    *:focus { outline: none; }
+    *:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+    /* ===== SCROLL PROGRESS ===== */
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--cyan), var(--cyan-bright)); z-index: 9997; transform-origin: left; transform: scaleX(0); transition: transform .1s linear; }
+
+    /* ===== PRELOADER ===== */
+    #preloader { position: fixed; inset: 0; background: var(--navy); z-index: 99999; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 28px; transition: opacity .9s ease, visibility .9s ease; }
+    #preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .pre-logo { width: 300px; opacity: 0; animation: fadeUp .8s .3s forwards; }
+    .pre-line { width: 0; height: 1px; background: var(--cyan); animation: growLine 1.2s .8s cubic-bezier(.4,0,.2,1) forwards; }
+    .pre-text { font-family: 'Rajdhani', sans-serif; font-size: .65rem; letter-spacing: .5em; text-transform: uppercase; color: rgba(0,200,200,.45); opacity: 0; animation: fadeUp .6s 1.4s forwards; }
+    @keyframes growLine { to { width: 220px; } }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ===== HEADER ===== */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 88px; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; transition: background .4s, box-shadow .4s, height .4s; }
+    header.scrolled { background: rgba(255,255,255,.96); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(0,200,200,.15), 0 4px 24px rgba(10,22,40,.07); height: 68px; }
+    .header-logo { height: 52px; object-fit: contain; transition: height .4s, filter .4s; filter: brightness(0) invert(1); }
+    header.scrolled .header-logo { height: 42px; filter: none; }
+
+    nav { display: flex; align-items: center; gap: 36px; }
+    nav a { font-family: 'Rajdhani', sans-serif; font-size: .75rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.8); text-decoration: none; position: relative; transition: color .3s; }
+    header.scrolled nav a { color: var(--text-mid); }
+    nav a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--cyan); transition: width .3s; }
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--cyan) !important; }
+    nav a.nav-active { color: var(--cyan) !important; }
+    nav a.nav-active::after { width: 100%; }
+    .nav-cta { padding: 10px 22px; border: 1px solid var(--cyan); color: var(--cyan) !important; font-size: .7rem; transition: background .3s, color .3s !important; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--cyan); color: var(--navy) !important; }
+
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .burger span { display: block; width: 24px; height: 1.5px; background: white; transition: all .3s; }
+    header.scrolled .burger span { background: var(--navy); }
+    .burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ===== MOBILE NAV ===== */
+    .mobile-nav { position: fixed; inset: 0; background: var(--navy); z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; opacity: 0; visibility: hidden; transition: opacity .4s, visibility .4s; }
+    .mobile-nav.open { opacity: 1; visibility: visible; }
+    .mobile-nav a { font-family: 'Rajdhani', sans-serif; font-size: 2rem; font-weight: 300; color: white; text-decoration: none; letter-spacing: .12em; text-transform: uppercase; transition: color .3s; }
+    .mobile-nav a:hover { color: var(--cyan); }
+    .mobile-nav-close { position: absolute; top: 28px; right: 40px; font-size: 1.6rem; color: white; cursor: pointer; background: none; border: none; line-height: 1; }
+
+    /* ===== BUTTONS ===== */
+    .btn-cyan { display: inline-flex; align-items: center; gap: 12px; padding: 15px 32px; background: var(--cyan); color: var(--navy); font-family: 'Rajdhani', sans-serif; font-size: .75rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; transition: background .3s, gap .3s; }
+    .btn-cyan:hover { background: var(--cyan-bright); gap: 20px; }
+    .btn-outline { display: inline-flex; align-items: center; gap: 10px; padding: 15px 28px; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.7); font-family: 'Rajdhani', sans-serif; font-size: .75rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; transition: border-color .3s, color .3s; }
+    .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+    .btn-outline-dark { display: inline-flex; align-items: center; gap: 10px; padding: 15px 28px; border: 1px solid rgba(10,22,40,.2); color: var(--text-mid); font-family: 'Rajdhani', sans-serif; font-size: .75rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; transition: border-color .3s, color .3s; }
+    .btn-outline-dark:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    /* ===== TYPOGRAPHY ===== */
+    .lbl { font-family: 'Rajdhani', sans-serif; font-size: .62rem; font-weight: 600; letter-spacing: .4em; text-transform: uppercase; color: var(--cyan); display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .lbl::before { content: ''; width: 26px; height: 1px; background: var(--cyan); }
+    h2.sec { font-family: 'Rajdhani', sans-serif; font-size: clamp(2rem, 3.8vw, 3.8rem); font-weight: 600; line-height: 1.05; letter-spacing: .04em; text-transform: uppercase; color: var(--navy); }
+    h2.sec em { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; text-transform: none; color: var(--cyan-dark); letter-spacing: 0; }
+
+    /* ===== REVEAL ===== */
+    .rv { opacity: 0; transform: translateY(32px); transition: opacity .8s ease, transform .8s ease; }
+    .rv.on { opacity: 1; transform: translateY(0); }
+    .rv-l { opacity: 0; transform: translateX(-32px); transition: opacity .8s ease, transform .8s ease; }
+    .rv-l.on { opacity: 1; transform: translateX(0); }
+    .rv-r { opacity: 0; transform: translateX(32px); transition: opacity .8s ease, transform .8s ease; }
+    .rv-r.on { opacity: 1; transform: translateX(0); }
+
+    /* ===== FOOTER ===== */
+    footer { background: #040D1A; padding: 80px 60px 40px; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 56px; border-bottom: 1px solid rgba(0,200,200,.08); }
+    .footer-logo { width: 180px; margin-bottom: 18px; }
+    .footer-brand p { font-size: .85rem; line-height: 1.8; color: rgba(255,255,255,.3); max-width: 260px; }
+    .footer-col h4 { font-family: 'Rajdhani', sans-serif; font-size: .58rem; font-weight: 600; letter-spacing: .35em; text-transform: uppercase; color: var(--cyan); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-col ul li a { font-size: .88rem; color: rgba(255,255,255,.3); text-decoration: none; transition: color .3s; }
+    .footer-col ul li a:hover { color: var(--cyan); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: 36px; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: .72rem; color: rgba(255,255,255,.2); }
+    .footer-legal { display: flex; gap: 22px; }
+    .footer-legal a { font-size: .72rem; color: rgba(255,255,255,.2); text-decoration: none; transition: color .3s; }
+    .footer-legal a:hover { color: var(--cyan); }
+
+    /* ===== CATALOGUE HERO ===== */
+    .cat-hero {
+      position: relative;
+      height: 58vh;
+      min-height: 480px;
+      background: linear-gradient(135deg, #040D1A 0%, #0A1628 40%, #0E2040 70%, #071220 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: 88px;
+    }
+    .cat-hero-bg { position: absolute; inset: 0; background:
+      radial-gradient(ellipse at 20% 60%, rgba(0,200,200,.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(0,150,220,.08) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 90%, rgba(0,80,160,.06) 0%, transparent 40%); }
+    .cat-hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,200,200,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,200,200,.03) 1px, transparent 1px); background-size: 80px 80px; }
+    .cat-hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 60px;
+    }
+    .cat-hero-content .lbl { justify-content: center; }
+    .cat-hero-content .lbl::before { display: none; }
+    .cat-h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(3.2rem, 7.5vw, 8rem);
+      font-weight: 600;
+      line-height: .92;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp .85s .4s forwards;
+    }
+    .cat-h1 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      text-transform: none;
+      color: var(--cyan);
+      display: block;
+      font-size: clamp(2.4rem, 5.5vw, 5.8rem);
+      letter-spacing: 0;
+      line-height: 1;
+    }
+    .cat-hero-sub {
+      font-size: .95rem;
+      color: rgba(255,255,255,.48);
+      line-height: 1.85;
+      max-width: 580px;
+      margin: 0 auto 40px;
+      opacity: 0;
+      animation: fadeUp .7s .65s forwards;
+    }
+    .cat-hero-actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp .7s .85s forwards;
+    }
+    .cat-hero-breadcrumb {
+      position: absolute;
+      bottom: 28px;
+      left: 60px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: .35;
+    }
+    .cat-hero-breadcrumb a,
+    .cat-hero-breadcrumb span {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: white;
+      text-decoration: none;
+      transition: color .3s;
+    }
+    .cat-hero-breadcrumb a:hover { color: var(--cyan); opacity: 1; }
+    .cat-hero-breadcrumb .sep { opacity: .4; }
+    .cat-hero-breadcrumb .current { color: var(--cyan); opacity: .8; }
+
+    /* ===== QUICK NAV CATALOGUE ===== */
+    .cat-qnav {
+      background: var(--navy);
+      overflow-x: auto;
+      scrollbar-width: none;
+      position: sticky;
+      top: 88px;
+      z-index: 100;
+      border-bottom: 1px solid rgba(0,200,200,.08);
+      transition: top .4s;
+    }
+    .cat-qnav.header-small { top: 68px; }
+    .cat-qnav::-webkit-scrollbar { display: none; }
+    .cat-qnav-inner {
+      display: flex;
+      min-width: max-content;
+      padding: 0 60px;
+    }
+    .cat-qnav a {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .63rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.38);
+      text-decoration: none;
+      padding: 18px 22px;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color .3s, border-color .3s;
+      display: block;
+    }
+    .cat-qnav a:hover { color: rgba(255,255,255,.8); }
+    .cat-qnav a.qnav-active { color: var(--cyan); border-bottom-color: var(--cyan); }
+
+    /* ===== INTRO SECTION ===== */
+    .cat-intro {
+      background: var(--white);
+      padding: 96px 60px;
+      text-align: center;
+    }
+    .cat-intro-text {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 2;
+      color: var(--text-mid);
+    }
+    .cat-kpi {
+      display: flex;
+      justify-content: center;
+      gap: 72px;
+      margin-top: 64px;
+      padding-top: 64px;
+      border-top: 1px solid var(--ice-mid);
+      flex-wrap: wrap;
+    }
+    .cat-kpi-item strong {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: var(--cyan);
+      display: block;
+      line-height: 1;
+    }
+    .cat-kpi-item span {
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    /* ===== SECTIONS CATALOGUE ===== */
+    .cat-section {
+      padding: 100px 60px;
+      background: var(--white);
+      scroll-margin-top: 155px;
+    }
+    .cat-section.alt { background: var(--ice); }
+
+    .cat-section-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 40px 56px;
+      align-items: start;
+      margin-bottom: 60px;
+    }
+    .cat-section-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 5.5rem;
+      font-weight: 600;
+      color: rgba(0,200,200,.07);
+      line-height: 1;
+      user-select: none;
+      padding-top: 8px;
+    }
+
+    /* ===== SOUS-CATÉGORIES ===== */
+    .cat-sub { margin-bottom: 52px; }
+    .cat-sub:last-child { margin-bottom: 0; }
+    .cat-sub-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .58rem;
+      font-weight: 600;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .cat-sub-label::before { content: ''; width: 26px; height: 1px; background: var(--cyan); flex-shrink: 0; }
+    .cat-sub-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--ice-mid), transparent); }
+
+    /* ===== PRODUCT TYPES TAGS ===== */
+    .cat-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .cat-type-tag {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      padding: 7px 14px;
+      border: 1px solid var(--ice-mid);
+      background: var(--white);
+    }
+    .cat-section.alt .cat-type-tag { background: rgba(255,255,255,.7); }
+
+    /* ===== FOURNISSEUR CARDS ===== */
+    .supplier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 10px;
+    }
+    .supplier-card {
+      background: var(--white);
+      border: 1px solid rgba(0,200,200,.1);
+      padding: 24px 26px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color .3s, box-shadow .35s, transform .3s;
+      cursor: default;
+    }
+    .cat-section.alt .supplier-card { background: var(--white); }
+    .supplier-card:hover {
+      border-color: rgba(0,200,200,.32);
+      box-shadow: 0 4px 28px rgba(0,200,200,.06);
+      transform: translateY(-3px);
+    }
+    .supplier-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .supplier-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.08rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+    .country-badge {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .48rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      padding: 4px 9px;
+      border: 1px solid var(--ice-mid);
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .supplier-specialty {
+      font-size: .8rem;
+      color: var(--text-light);
+      line-height: 1.55;
+      border-left: 2px solid var(--ice-mid);
+      padding-left: 10px;
+    }
+
+    /* ===== CTA MID-PAGE ===== */
+    .cat-cta-mid {
+      background: var(--navy);
+      padding: 64px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      border-top: 1px solid rgba(0,200,200,.08);
+    }
+    .cat-cta-mid-text p.lbl { margin-bottom: 8px; }
+    .cat-cta-mid-text h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(1.4rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      color: white;
+      letter-spacing: .04em;
+    }
+    .cat-cta-mid-text h3 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      text-transform: none;
+      color: var(--cyan);
+    }
+    .cat-cta-mid-text p.sub {
+      margin-top: 10px;
+      font-size: .88rem;
+      color: rgba(255,255,255,.35);
+      max-width: 400px;
+      line-height: 1.7;
+    }
+    .cat-cta-mid-actions { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+
+    /* ===== CTA FINAL ===== */
+    .cat-final {
+      background: var(--navy);
+      padding: 120px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(0,200,200,.1) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 30%, rgba(0,150,220,.07) 0%, transparent 45%);
+    }
+    .cat-final-content { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .cat-final .lbl { justify-content: center; }
+    .cat-final .lbl::before { display: none; }
+    .cat-final h2.sec { color: white; margin-bottom: 24px; }
+    .cat-final p {
+      font-size: .95rem;
+      color: rgba(255,255,255,.42);
+      line-height: 1.9;
+      margin-bottom: 44px;
+    }
+    .cat-final-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== SECTION INFO (Revêtements) ===== */
+    .cat-section-note {
+      background: rgba(0,200,200,.04);
+      border: 1px solid rgba(0,200,200,.12);
+      border-left: 3px solid var(--cyan);
+      padding: 28px 32px;
+      margin-top: 32px;
+    }
+    .cat-section-note p {
+      font-size: .88rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    /* ===== DOCUMENTS PDF — pattern évolutif ===== */
+    /* Pour ajouter un nouveau PDF : dupliquer un .doc-link dans le .supplier-docs concerné */
+    .supplier-docs {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 6px;
+      padding-top: 14px;
+      border-top: 1px solid var(--ice-mid);
+    }
+    .doc-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px 8px 8px;
+      background: var(--ice);
+      border: 1px solid transparent;
+      text-decoration: none;
+      transition: background .25s, border-color .25s;
+    }
+    .doc-link:hover {
+      background: rgba(0,200,200,.07);
+      border-color: rgba(0,200,200,.22);
+    }
+    .doc-icon {
+      width: 26px;
+      height: 30px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .44rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      color: var(--cyan);
+    }
+    .doc-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .64rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      flex: 1;
+      line-height: 1.3;
+      transition: color .25s;
+    }
+    .doc-link:hover .doc-label { color: var(--navy); }
+    .doc-arrow {
+      font-size: .75rem;
+      color: var(--cyan);
+      opacity: .45;
+      flex-shrink: 0;
+      transition: opacity .25s, transform .25s;
+    }
+    .doc-link:hover .doc-arrow { opacity: 1; transform: translateY(2px); }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1100px){
+      header { padding: 0 36px; }
+      .cat-hero-content { padding: 0 36px; }
+      .cat-hero-breadcrumb { left: 36px; }
+      .cat-intro { padding: 80px 36px; }
+      .cat-section { padding: 80px 36px; }
+      .cat-qnav-inner { padding: 0 36px; }
+      .cat-cta-mid { padding: 56px 36px; flex-direction: column; align-items: flex-start; gap: 28px; }
+      .cat-final { padding: 96px 36px; }
+      footer { padding: 60px 36px 36px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .cat-section-head { grid-template-columns: 1fr; gap: 12px; }
+      .cat-section-num { font-size: 3.5rem; }
+    }
+    @media(max-width:900px){
+      nav { display: none; }
+      .burger { display: flex; }
+      .supplier-grid { grid-template-columns: 1fr 1fr; }
+      .cat-kpi { gap: 40px; }
+    }
+    @media(max-width:640px){
+      header { padding: 0 20px; }
+      .cat-hero { min-height: 420px; }
+      .cat-hero-content { padding: 0 20px; }
+      .cat-hero-actions { flex-direction: column; align-items: center; }
+      .cat-hero-breadcrumb { left: 20px; }
+      .cat-intro { padding: 60px 20px; }
+      .cat-section { padding: 60px 20px; }
+      .cat-qnav-inner { padding: 0 20px; }
+      .cat-cta-mid { padding: 56px 20px; }
+      .cat-final { padding: 80px 20px; }
+      footer { padding: 60px 20px 30px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .supplier-grid { grid-template-columns: 1fr; }
+      .cat-kpi { gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Préchargeur -->
+<div id="preloader" aria-hidden="true">
+  <img class="pre-logo" src="assets/logo-header.png" alt="TALIA Concept" />
+  <div class="pre-line"></div>
+  <p class="pre-text">Catalogue Fournisseur</p>
+</div>
+
+<!-- Curseur custom -->
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="scroll-progress" id="sp" role="progressbar" aria-label="Progression de lecture"></div>
+
+<!-- Header -->
+<header id="hdr">
+  <a href="index.html" aria-label="TALIA Concept — Retour à l'accueil">
+    <img class="header-logo" src="assets/logo-header.png" alt="TALIA Concept" id="hLogo" />
+  </a>
+  <nav aria-label="Navigation principale">
+    <a href="index.html#univers">Nos Univers</a>
+    <a href="index.html#about">À Propos</a>
+    <a href="index.html#galerie">Réalisations</a>
+    <a href="index.html#accompagnement">Accompagnement</a>
+    <a href="catalogue.html" class="nav-active">Catalogue</a>
+    <a href="index.html#contact" class="nav-cta">Devis Gratuit</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile nav -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+  <button class="mobile-nav-close" id="navClose" aria-label="Fermer le menu">✕</button>
+  <a href="index.html#univers">Nos Univers</a>
+  <a href="index.html#about">À Propos</a>
+  <a href="index.html#galerie">Réalisations</a>
+  <a href="index.html#accompagnement">Accompagnement</a>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="cat-hero" aria-label="Catalogue fournisseur TALIA Concept">
+  <div class="cat-hero-bg" aria-hidden="true"></div>
+  <div class="cat-hero-grid" aria-hidden="true"></div>
+  <div class="cat-hero-content">
+    <p class="lbl" style="opacity:0;animation:fadeUp .6s .2s forwards">Notre sélection</p>
+    <h1 class="cat-h1">Catalogue<br><em>Fournisseur</em></h1>
+    <p class="cat-hero-sub">Une sélection rigoureuse de partenaires et marques reconnus, choisie pour répondre à chaque projet d'aménagement avec fiabilité, esthétique et précision.</p>
+    <div class="cat-hero-actions">
+      <a href="index.html#contact" class="btn-cyan">Demander un devis gratuit →</a>
+      <a href="index.html" class="btn-outline">← Retour à l'accueil</a>
+    </div>
+  </div>
+  <div class="cat-hero-breadcrumb" aria-label="Fil d'Ariane">
+    <a href="index.html">Accueil</a>
+    <span class="sep">/</span>
+    <span class="current">Catalogue</span>
+  </div>
+</section>
+
+<!-- ===== QUICK NAV ===== -->
+<nav class="cat-qnav" id="catQnav" aria-label="Navigation rapide catalogue">
+  <div class="cat-qnav-inner">
+    <a href="#amenagement" class="qnav-link">Aménagement sur mesure</a>
+    <a href="#ameublement" class="qnav-link">Ameublement</a>
+    <a href="#cuisine" class="qnav-link">Cuisine</a>
+    <a href="#electromenager" class="qnav-link">Électroménager</a>
+    <a href="#literie" class="qnav-link">Literie</a>
+    <a href="#salle-de-bain" class="qnav-link">Salle de bain</a>
+    <a href="#verriere" class="qnav-link">Verrière &amp; claustra</a>
+    <a href="#revetements" class="qnav-link">Revêtements</a>
+  </div>
+</nav>
+
+<!-- ===== INTRO ===== -->
+<section class="cat-intro" aria-labelledby="intro-title">
+  <p class="lbl rv" style="justify-content:center"><span id="intro-title">Notre approche fournisseur</span></p>
+  <h2 class="sec rv" style="margin-bottom:32px">Une sélection <em>maîtrisée</em></h2>
+  <p class="cat-intro-text rv">
+    Chez TALIA Concept, chaque fournisseur est sélectionné avec soin pour vous garantir
+    fiabilité, durabilité et esthétique à la hauteur de vos ambitions. Nos partenaires couvrent
+    l'ensemble des besoins en aménagement intérieur — de la cuisine au sol, du meuble à la literie —
+    avec des gammes adaptées à tous les projets et tous les budgets.
+  </p>
+  <div class="cat-kpi rv">
+    <div class="cat-kpi-item">
+      <strong>17+</strong>
+      <span>Fournisseurs sélectionnés</span>
+    </div>
+    <div class="cat-kpi-item">
+      <strong>8</strong>
+      <span>Univers couverts</span>
+    </div>
+    <div class="cat-kpi-item">
+      <strong>5</strong>
+      <span>Pays d'origine</span>
+    </div>
+    <div class="cat-kpi-item">
+      <strong>100%</strong>
+      <span>Sur mesure</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== A. AMÉNAGEMENT SUR MESURE ===== -->
+<section class="cat-section alt" id="amenagement" aria-labelledby="h-amenagement">
+  <div class="cat-section-head rv">
+    <div class="cat-section-num" aria-hidden="true">A</div>
+    <div>
+      <p class="lbl">Univers 01</p>
+      <h2 class="sec" id="h-amenagement">Aménagement<br><em>sur mesure</em></h2>
+      <p style="font-size:.95rem;line-height:1.85;color:var(--text-mid);margin-top:16px;max-width:540px">
+        Solutions d'aménagement intérieur conçues entièrement sur mesure, adaptées à vos contraintes de surface et à votre style de vie.
+      </p>
+    </div>
+  </div>
+  <div class="supplier-grid rv">
+    <div class="supplier-card">
+      <div class="supplier-card-top">
+        <span class="supplier-name">In Ipso</span>
+        <span class="country-badge">FR</span>
+      </div>
+      <p class="supplier-specialty">Aménagement sur mesure — solutions intérieures conçues et fabriquées selon vos spécifications exactes</p>
+      <!-- PDF disponibles — ajouter de nouveaux catalogues In Ipso ici -->
+      <div class="supplier-docs">
+        <a class="doc-link" href="catalogues/amenagement-sur-mesure/in-ipso/01_Catalogue-IN-IPSO-04.2025.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le catalogue principal In Ipso 2025">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label">Catalogue principal 2025</span>
+          <span class="doc-arrow">↓</span>
+        </a>
+        <a class="doc-link" href="catalogues/amenagement-sur-mesure/in-ipso/02_Petit-catalogue-IN-IPSO-2025.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le petit catalogue In Ipso 2025">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label">Petit catalogue 2025</span>
+          <span class="doc-arrow">↓</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== B. AMEUBLEMENT ===== -->
+<section class="cat-section" id="ameublement" aria-labelledby="h-ameublement">
+  <div class="cat-section-head rv">
+    <div class="cat-section-num" aria-hidden="true">B</div>
+    <div>
+      <p class="lbl">Univers 02</p>
+      <h2 class="sec" id="h-ameublement">Ameublement</h2>
+      <p style="font-size:.95rem;line-height:1.85;color:var(--text-mid);margin-top:16px;max-width:540px">
+        Mobilier de qualité pour composer des intérieurs cohérents et durables. Gammes variées adaptées à chaque style et chaque espace.
+      </p>
+    </div>
+  </div>
+
+  <div class="cat-types rv">
+    <span class="cat-type-tag">Tabouret</span>
+    <span class="cat-type-tag">Chaise</span>
+    <span class="cat-type-tag">Table</span>
+    <span class="cat-type-tag">Pieds de table</span>
+  </div>
+
+  <div class="supplier-grid rv">
+    <div class="supplier-card">
+      <div class="supplier-card-top">
+        <span class="supplier-name">Approsine France</span>
+        <span class="country-badge">FR</span>
+      </div>
+      <p class="supplier-specialty">Mobilier et accessoires d'ameublement — gammes variées pour l'habitat et l'aménagement intérieur</p>
+      <!-- PDF disponibles — ajouter de nouveaux catalogues Approsine ici -->
+      <div class="supplier-docs">
+        <a class="doc-link" href="catalogues/ameublement/approsine-france/APPROSINE-Tabourets-Chaises-Tables-MAJ_2024.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le catalogue assises et tables Approsine 2024">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label">Catalogue assises &amp; tables 2024</span>
+          <span class="doc-arrow">↓</span>
+        </a>
+        <a class="doc-link" href="catalogues/ameublement/approsine-france/APPROSINE-Catalogue-Pieds-de-Table-Sp%C3%A9cial-Marbriers-Book.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le catalogue pieds de table Approsine">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label">Catalogue pieds de table</span>
+          <span class="doc-arrow">↓</span>
+        </a>
+      </div>
+    </div>
+    <div class="supplier-card">
+      <div class="supplier-card-top">
+        <span class="supplier-name">Lusina France</span>
+        <span class="country-badge">FR</span>
+      </div>
+      <p class="supplier-specialty">Solutions d'ameublement intérieur — assises, tables et mobilier coordonnés</p>
+      <!-- PDF disponibles — ajouter de nouveaux catalogues Luisina ameublement ici -->
+      <div class="supplier-docs">
+        <a class="doc-link" href="catalogues/ameublement/luisina-france/chaises-et-tabourets%202026%20LUISINA.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le catalogue chaises et tabourets Luisina 2026">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label">Chaises &amp; tabourets 2026</span>
+          <span class="doc-arrow">↓</span>
+        </a>
+        <a class="doc-link" href="catalogues/ameublement/luisina-france/tables-chaises-et-tabourets%20LUISINA.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le catalogue tables chaises et tabourets Luisina">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label">Tables, chaises &amp; tabourets</span>
+          <span class="doc-arrow">↓</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== C. CUISINE ===== -->
+<section class="cat-section alt" id="cuisine" aria-labelledby="h-cuisine">
+  <div class="cat-section-head rv">
+    <div class="cat-section-num" aria-hidden="true">C</div>
+    <div>
+      <p class="lbl">Univers 03</p>
+      <h2 class="sec" id="h-cuisine">Cuisine</h2>
+      <p style="font-size:.95rem;line-height:1.85;color:var(--text-mid);margin-top:16px;max-width:540px">
+        L'univers cuisine de TALIA Concept s'appuie sur une sélection complète couvrant la fabrication de meuble, l'équipement, les plans de travail et l'électroménager. Une offre cohérente pour un résultat clé en main.
+      </p>
+    </div>
+  </div>
+
+  <!-- C1 — Fabricant meuble -->
+  <div class="cat-sub rv">
+    <div class="cat-sub-label" role="heading" aria-level="3">Fabricant meuble</div>
+    <div class="supplier-grid">
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Discac</span>
+          <span class="country-badge">FR</span>
+        </div>
+        <p class="supplier-specialty">Fabrication française de meubles de cuisine — qualité haut de gamme, finitions personnalisées</p>
+      </div>
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Schüller</span>
+          <span class="country-badge">DE</span>
+        </div>
+        <p class="supplier-specialty">Cuisiniste allemand reconnu — précision, durabilité et design contemporain made in Germany</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- C2 — Équipement sanitaire & accessoires -->
+  <div class="cat-sub rv">
+    <div class="cat-sub-label" role="heading" aria-level="3">Équipement sanitaire &amp; accessoires cuisine</div>
+    <div class="supplier-grid">
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Approsine France</span>
+          <span class="country-badge">FR</span>
+        </div>
+        <p class="supplier-specialty">Équipements et accessoires pour cuisine et salle de bain</p>
+      </div>
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Boet</span>
+          <span class="country-badge">ES</span>
+        </div>
+        <p class="supplier-specialty">Équipements sanitaires et accessoires — fabrication espagnole</p>
+      </div>
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Franke</span>
+          <span class="country-badge">CH</span>
+        </div>
+        <p class="supplier-specialty">Éviers, robinetterie et accessoires cuisine de référence — qualité suisse depuis 1911</p>
+      </div>
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Gattoni</span>
+          <span class="country-badge">IT</span>
+        </div>
+        <p class="supplier-specialty">Robinetterie et accessoires sanitaires de tradition italienne — esthétique et durabilité</p>
+      </div>
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">GME</span>
+          <span class="country-badge">ES</span>
+        </div>
+        <p class="supplier-specialty">Équipements sanitaires et accessoires — fabrication espagnole</p>
+      </div>
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Hansgrohe</span>
+          <span class="country-badge">DE</span>
+        </div>
+        <p class="supplier-specialty">Robinetterie et systèmes de douche premium — design allemand reconnu mondialement</p>
+      </div>
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Lusina France</span>
+          <span class="country-badge">FR</span>
+        </div>
+        <p class="supplier-specialty">Accessoires et équipements pour cuisine — solutions fonctionnelles et esthétiques</p>
+      </div>
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">MSA France</span>
+          <span class="country-badge">FR</span>
+        </div>
+        <p class="supplier-specialty">Équipements et accessoires cuisine — qualité et fiabilité françaises</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- C3 — Plan de travail & crédence -->
+  <div class="cat-sub rv">
+    <div class="cat-sub-label" role="heading" aria-level="3">Plan de travail &amp; crédence</div>
+    <div class="supplier-grid">
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Luisina France</span>
+          <span class="country-badge">FR</span>
+        </div>
+        <p class="supplier-specialty">Plans de travail et solutions de surface — gammes variées de matériaux et finitions</p>
+      </div>
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Pixpano France</span>
+          <span class="country-badge">FR</span>
+        </div>
+        <p class="supplier-specialty">Crédences et panneaux décoratifs personnalisables — décors sur mesure imprimés à l'unité</p>
+      </div>
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Topstar</span>
+          <span class="country-badge">IT</span>
+        </div>
+        <p class="supplier-specialty">Plans de travail en quartz et matériaux compacts — finitions italiennes haut de gamme</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- C4 — Équipement électroménager -->
+  <div class="cat-sub rv">
+    <div class="cat-sub-label" role="heading" aria-level="3">Équipement électroménager</div>
+    <div class="supplier-grid">
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Luisina France</span>
+          <span class="country-badge">FR</span>
+        </div>
+        <p class="supplier-specialty">Électroménager encastrable — intégration cuisine parfaite, gammes intégrées</p>
+      </div>
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Roblin</span>
+          <span class="country-badge">FR</span>
+        </div>
+        <p class="supplier-specialty">Hottes et ventilation cuisine — solutions de filtration efficaces et design épuré</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CTA MID — APRÈS CUISINE ===== -->
+<div class="cat-cta-mid rv" role="complementary">
+  <div class="cat-cta-mid-text">
+    <p class="lbl">Votre projet cuisine</p>
+    <h3>Un projet cuisine<br><em>clé en main ?</em></h3>
+    <p class="sub">De la conception au plan 3D, TALIA Concept coordonne l'ensemble — meubles, équipements, plan de travail — avec un seul interlocuteur.</p>
+  </div>
+  <div class="cat-cta-mid-actions">
+    <a href="index.html#contact" class="btn-cyan">Étude gratuite →</a>
+    <a href="index.html#accompagnement" class="btn-outline">Notre accompagnement</a>
+  </div>
+</div>
+
+
+<!-- ===== D. ÉLECTROMÉNAGER ===== -->
+<section class="cat-section" id="electromenager" aria-labelledby="h-electro">
+  <div class="cat-section-head rv">
+    <div class="cat-section-num" aria-hidden="true">D</div>
+    <div>
+      <p class="lbl">Univers 04</p>
+      <h2 class="sec" id="h-electro">Électroménager</h2>
+      <p style="font-size:.95rem;line-height:1.85;color:var(--text-mid);margin-top:16px;max-width:540px">
+        Sélection d'équipements électroménagers fiables et esthétiques, choisis pour leur qualité d'intégration et leur longévité.
+      </p>
+    </div>
+  </div>
+  <div class="supplier-grid rv">
+    <div class="supplier-card">
+      <div class="supplier-card-top">
+        <span class="supplier-name">Roblin</span>
+        <span class="country-badge">FR</span>
+      </div>
+      <p class="supplier-specialty">Hottes aspirantes et ventilation — solutions d'extraction performantes pour une cuisine sans odeurs</p>
+      <!-- PDF disponibles — ajouter de nouveaux catalogues Roblin ici -->
+      <div class="supplier-docs">
+        <a class="doc-link" href="catalogues/electromenager/roblin/ROBLIN_Kitchen_2025.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le catalogue Kitchen Roblin 2025">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label">Catalogue Kitchen 2025</span>
+          <span class="doc-arrow">↓</span>
+        </a>
+        <a class="doc-link" href="catalogues/electromenager/roblin/ROBLIN_Retail_2025.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le catalogue Retail Roblin 2025">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label">Catalogue Retail 2025</span>
+          <span class="doc-arrow">↓</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== E. LITERIE ===== -->
+<section class="cat-section alt" id="literie" aria-labelledby="h-literie">
+  <div class="cat-section-head rv">
+    <div class="cat-section-num" aria-hidden="true">E</div>
+    <div>
+      <p class="lbl">Univers 05</p>
+      <h2 class="sec" id="h-literie">Literie</h2>
+      <p style="font-size:.95rem;line-height:1.85;color:var(--text-mid);margin-top:16px;max-width:540px">
+        Une sélection de literie haut de gamme pour des chambres alliant confort, santé et esthétique.
+      </p>
+    </div>
+  </div>
+  <div class="supplier-grid rv">
+    <div class="supplier-card">
+      <div class="supplier-card-top">
+        <span class="supplier-name">Technilat</span>
+        <span class="country-badge">FR</span>
+      </div>
+      <p class="supplier-specialty">Fabricant français de literie de qualité — matelas, sommiers et accessoires de sommeil pour un confort durable</p>
+    </div>
+    <div class="supplier-card">
+      <div class="supplier-card-top">
+        <span class="supplier-name">Biotex</span>
+        <span class="country-badge">FR</span>
+      </div>
+      <p class="supplier-specialty">Literie et textiles de chambre — solutions naturelles et hygiéniques pour un sommeil sain</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== F. SALLE DE BAIN ===== -->
+<section class="cat-section" id="salle-de-bain" aria-labelledby="h-sdb">
+  <div class="cat-section-head rv">
+    <div class="cat-section-num" aria-hidden="true">F</div>
+    <div>
+      <p class="lbl">Univers 06</p>
+      <h2 class="sec" id="h-sdb">Salle de bain</h2>
+      <p style="font-size:.95rem;line-height:1.85;color:var(--text-mid);margin-top:16px;max-width:540px">
+        Salle de bain sur mesure avec une gamme complète couvrant meubles, plans vasque, robinetterie et accessoires. Une cohérence visuelle totale pour un espace épuré et fonctionnel.
+      </p>
+    </div>
+  </div>
+
+  <!-- F1 — Solutions complètes -->
+  <div class="cat-sub rv">
+    <div class="cat-sub-label" role="heading" aria-level="3">Solutions complètes</div>
+    <div class="supplier-grid">
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Luisina France</span>
+          <span class="country-badge">FR</span>
+        </div>
+        <p class="supplier-specialty">Plans vasque, meubles salle de bain et accessoires — gammes coordonnées pour une salle de bain clé en main</p>
+        <!-- PDF disponibles — ajouter de nouveaux catalogues Luisina salle de bain ici -->
+        <div class="supplier-docs">
+          <a class="doc-link" href="catalogues/salle-de-bain/luisina-france/LUISINA%20bain.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le catalogue salle de bain Luisina">
+            <span class="doc-icon">PDF</span>
+            <span class="doc-label">Catalogue salle de bain</span>
+            <span class="doc-arrow">↓</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- F2 — Fabricant meuble -->
+  <div class="cat-sub rv">
+    <div class="cat-sub-label" role="heading" aria-level="3">Fabricant meuble</div>
+    <div class="supplier-grid">
+      <div class="supplier-card">
+        <div class="supplier-card-top">
+          <span class="supplier-name">Discac</span>
+          <span class="country-badge">FR</span>
+        </div>
+        <p class="supplier-specialty">Meubles de salle de bain fabriqués en France — finitions soignées, matériaux résistants à l'humidité</p>
+        <!-- PDF disponibles — ajouter de nouveaux catalogues Discac salle de bain ici -->
+        <div class="supplier-docs">
+          <a class="doc-link" href="catalogues/salle-de-bain/discac-france/Discac-Collection-Salles-de-Bains-2025.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la collection salles de bains Discac 2025">
+            <span class="doc-icon">PDF</span>
+            <span class="doc-label">Collection Salles de bains 2025</span>
+            <span class="doc-arrow">↓</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CTA MID — APRÈS SDB ===== -->
+<div class="cat-cta-mid rv" role="complementary">
+  <div class="cat-cta-mid-text">
+    <p class="lbl">Salle de bain & literie</p>
+    <h3>Concevons votre espace<br><em>détente idéal</em></h3>
+    <p class="sub">Salle de bain sur mesure, literie haut de gamme — TALIA Concept vous accompagne pour créer un espace intime à votre image, avec plan 3D inclus.</p>
+  </div>
+  <div class="cat-cta-mid-actions">
+    <a href="index.html#contact" class="btn-cyan">Devis gratuit →</a>
+  </div>
+</div>
+
+
+<!-- ===== G. VERRIÈRE & CLAUSTRA ===== -->
+<section class="cat-section alt" id="verriere" aria-labelledby="h-verriere">
+  <div class="cat-section-head rv">
+    <div class="cat-section-num" aria-hidden="true">G</div>
+    <div>
+      <p class="lbl">Univers 07</p>
+      <h2 class="sec" id="h-verriere">Verrière &amp;<br><em>claustra sur mesure</em></h2>
+      <p style="font-size:.95rem;line-height:1.85;color:var(--text-mid);margin-top:16px;max-width:540px">
+        Séparations intérieures, verrières d'atelier et claustras réalisés sur mesure pour structurer vos espaces avec élégance et lumière.
+      </p>
+    </div>
+  </div>
+  <div class="supplier-grid rv">
+    <div class="supplier-card">
+      <div class="supplier-card-top">
+        <span class="supplier-name">In Ipso</span>
+        <span class="country-badge">FR</span>
+      </div>
+      <p class="supplier-specialty">Verrières et claustras sur mesure — fabrication française, assemblage et pose coordonnée avec TALIA Concept</p>
+      <!-- PDF disponibles — ajouter de nouveaux catalogues In Ipso verrière ici -->
+      <div class="supplier-docs">
+        <a class="doc-link" href="catalogues/verriere-claustra/in-ipso/01_Catalogue-IN-IPSO-04.2025.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le catalogue In Ipso 2025">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label">Catalogue 2025</span>
+          <span class="doc-arrow">↓</span>
+        </a>
+      </div>
+    </div>
+    <div class="supplier-card">
+      <div class="supplier-card-top">
+        <span class="supplier-name">Pixpano France</span>
+        <span class="country-badge">FR</span>
+      </div>
+      <p class="supplier-specialty">Panneaux décoratifs et revêtements muraux personnalisables — décors imprimés pour claustras et verrières habillées</p>
+      <!-- PDF disponibles — ajouter de nouveaux catalogues Pixpano ici -->
+      <div class="supplier-docs">
+        <a class="doc-link" href="catalogues/verriere-claustra/pixpano/01_Pixpano%20-%20Catalogue%20Verrieres.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le catalogue verrières Pixpano">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label">Catalogue verrières</span>
+          <span class="doc-arrow">↓</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== H. REVÊTEMENTS SOLS & MURS ===== -->
+<section class="cat-section" id="revetements" aria-labelledby="h-revetements">
+  <div class="cat-section-head rv">
+    <div class="cat-section-num" aria-hidden="true">H</div>
+    <div>
+      <p class="lbl">Univers 08</p>
+      <h2 class="sec" id="h-revetements">Revêtements<br><em>sols &amp; murs</em></h2>
+      <p style="font-size:.95rem;line-height:1.85;color:var(--text-mid);margin-top:16px;max-width:540px">
+        Carrelage, parquet, faïence, enduits décoratifs, panneaux muraux — TALIA Concept sélectionne vos revêtements sols et murs en fonction de votre projet, de votre style et de votre budget.
+      </p>
+    </div>
+  </div>
+
+  <div class="cat-types rv">
+    <span class="cat-type-tag">Carrelage</span>
+    <span class="cat-type-tag">Parquet</span>
+    <span class="cat-type-tag">Faïence</span>
+    <span class="cat-type-tag">Enduits décoratifs</span>
+    <span class="cat-type-tag">Panneaux muraux</span>
+    <span class="cat-type-tag">Sol vinyle</span>
+  </div>
+
+  <div class="supplier-grid rv">
+    <div class="supplier-card">
+      <div class="supplier-card-top">
+        <span class="supplier-name">Pixpano France</span>
+        <span class="country-badge">FR</span>
+      </div>
+      <p class="supplier-specialty">Panneaux muraux et décoratifs sur mesure — habillage de surfaces murs et plafonds, décors personnalisés à l'unité</p>
+    </div>
+  </div>
+
+  <div class="cat-section-note rv">
+    <p>Pour les revêtements sols et murs de votre projet, TALIA Concept établit une sélection de matériaux adaptée à vos contraintes techniques, à votre univers esthétique et à votre budget. Contactez-nous pour une étude personnalisée incluant une présentation des collections disponibles.</p>
+  </div>
+</section>
+
+
+<!-- ===== CTA FINAL ===== -->
+<section class="cat-final" aria-labelledby="final-title">
+  <div class="cat-final-content">
+    <p class="lbl rv">Votre projet</p>
+    <h2 class="sec rv" id="final-title">Votre projet mérite<br>les <em>meilleurs partenaires</em></h2>
+    <p class="rv">
+      TALIA Concept coordonne pour vous l'ensemble des fournisseurs — fabricants, équipementiers, artisans —
+      pour vous livrer un intérieur clé en main, sans stress et sans mauvaise surprise.
+      Un seul interlocuteur, un seul devis, une seule vision.
+    </p>
+    <div class="cat-final-actions rv">
+      <a href="index.html#contact" class="btn-cyan">Demander un devis gratuit →</a>
+      <a href="index.html#galerie" class="btn-outline">Voir nos réalisations</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img class="footer-logo" src="assets/logo-header.png" alt="TALIA Concept" loading="lazy" />
+      <p>Expert du sur-mesure en aménagement intérieur. Cuisine, salle de bain, dressing, ameublement, revêtements. Vente directe et accompagnement personnalisé depuis Breuil-le-Vert (60).</p>
+    </div>
+    <div class="footer-col">
+      <h4>Nos Univers</h4>
+      <ul>
+        <li><a href="index.html#univers">Ameublement Déco</a></li>
+        <li><a href="index.html#univers">Agencement Sur Mesure</a></li>
+        <li><a href="index.html#univers">Sols &amp; Murs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html#about">À Propos</a></li>
+        <li><a href="index.html#galerie">Réalisations</a></li>
+        <li><a href="catalogue.html">Catalogue fournisseur</a></li>
+        <li><a href="index.html#accompagnement">Accompagnement</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+33344194874">03.44.19.48.74</a></li>
+        <li><a href="mailto:contact@talia-concept.fr">contact@talia-concept.fr</a></li>
+        <li><a href="https://www.instagram.com/taliaconcept_60/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61576881376256" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 TALIA Concept — 865-881 route de Paris, 60600 Breuil-le-Vert</p>
+    <div class="footer-legal">
+      <a href="#">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ===== PRÉCHARGEUR =====
+  setTimeout(() => {
+    const pl = document.getElementById('preloader');
+    pl.classList.add('hidden');
+    pl.addEventListener('transitionend', () => pl.remove(), { once: true });
+  }, 1200);
+
+  // ===== CURSEUR CUSTOM =====
+  const cur = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  if (cur && ring) {
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    function animCursor() {
+      cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+      rx += (mx - rx) * .12; ry += (my - ry) * .12;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(animCursor);
+    }
+    animCursor();
+    document.querySelectorAll('a, button, [role="button"]').forEach(el => {
+      el.addEventListener('mouseenter', () => { cur.classList.add('h'); ring.classList.add('h'); });
+      el.addEventListener('mouseleave', () => { cur.classList.remove('h'); ring.classList.remove('h'); });
+    });
+  }
+
+  // ===== SCROLL PROGRESS =====
+  const sp = document.getElementById('sp');
+  window.addEventListener('scroll', () => {
+    const max = document.body.scrollHeight - window.innerHeight;
+    sp.style.transform = `scaleX(${window.scrollY / max})`;
+  }, { passive: true });
+
+  // ===== HEADER SCROLL =====
+  const hdr = document.getElementById('hdr');
+  const qnav = document.getElementById('catQnav');
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY > 40;
+    hdr.classList.toggle('scrolled', s);
+    if (qnav) qnav.classList.toggle('header-small', s);
+  }, { passive: true });
+
+  // ===== BURGER MENU =====
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobileNav');
+  const navClose = document.getElementById('navClose');
+  burger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  navClose.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+    document.body.style.overflow = '';
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
+    });
+  });
+
+  // ===== REVEAL ON SCROLL =====
+  const revEls = document.querySelectorAll('.rv, .rv-l, .rv-r');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); ro.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  revEls.forEach(el => ro.observe(el));
+
+  // ===== QUICK NAV ACTIVE =====
+  const qNavLinks = document.querySelectorAll('.qnav-link');
+  const catSections = document.querySelectorAll('.cat-section[id]');
+  const ioQnav = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        qNavLinks.forEach(a => {
+          const href = a.getAttribute('href');
+          a.classList.toggle('qnav-active', href === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  catSections.forEach(s => ioQnav.observe(s));
+
+  // ===== SMOOTH SCROLL (same-page anchors) =====
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function (e) {
+      const t = document.querySelector(this.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+
+<!-- Données structurées JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Catalogue Fournisseur — TALIA Concept",
+  "url": "https://www.talia-concept.fr/catalogue.html",
+  "description": "Catalogue des fournisseurs et partenaires de TALIA Concept pour l'aménagement intérieur sur mesure.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "TALIA Concept",
+    "url": "https://www.talia-concept.fr"
+  }
+}
+</script>
+
+</body>
+</html>
